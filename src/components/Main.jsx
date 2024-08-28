@@ -13,19 +13,32 @@ export default function Main() {
   const result = trimmed.length > 0 ? calc(trimmed) : null;
 
   return (
-    <>
+    <div style={{ maxWidth: 600, margin: "auto", textAlign: "center" }}>
       <h1 style={{ fontSize: 40 }}>BLS Public Key Encoder</h1>
-      <input value={m} onChange={(e) => setM(e.target.value)}></input>
-      <p style={{ width: 700, wordWrap: "break-word" }}>
-        {m.trim().length > 0
-          ? result ?? "Invalid master public key"
-          : "Enter your master public key"}
+      <textarea
+        style={{
+          width: "500px",
+          height: "74px",
+          fontSize: 22,
+          padding: "10px",
+          appearance: "none",
+          outline: "none",
+          border: "1px solid black",
+          borderRadius: "6px",
+          fontFamily: "Arial",
+        }}
+        placeholder="Enter your master public key"
+        value={m}
+        onChange={(e) => setM(e.target.value)}
+      ></textarea>
+      <p style={{ fontSize: 22, wordWrap: "break-word" }}>
+        {m.trim().length > 0 ? result ?? "Invalid key format" : ""}
       </p>
-      <p style={{ fontSize: 20 }}>
+      <p style={{ fontSize: 18 }}>
         This converts a master public key to the first wallet address encoded
-        with the bls12381 prefix.
+        with the "bls1238" prefix.
       </p>
-    </>
+    </div>
   );
 }
 
