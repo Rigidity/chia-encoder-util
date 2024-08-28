@@ -22,8 +22,8 @@ export default function Main() {
           : "Enter your master public key"}
       </p>
       <p style={{ fontSize: 20 }}>
-        This converts a master public key to the first derivation encoded with
-        the bls12381 prefix.
+        This converts a master public key to the first wallet address encoded
+        with the bls12381 prefix.
       </p>
     </>
   );
