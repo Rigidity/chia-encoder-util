@@ -35,9 +35,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Prettier
-        run: pnpm prettier
-
       - name: Build with Trunk
         run: pnpm build
 
